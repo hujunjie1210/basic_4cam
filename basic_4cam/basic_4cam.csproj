@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8EBD770F-FEEA-465B-8309-B358881B2931}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>basic_4cam</RootNamespace>
+    <AssemblyName>basic_4cam</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CamWidget, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\camera\CamWidget.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="socket\IEupdate.cs" />
+    <Compile Include="db\db.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="db\db.Designer.cs">
+      <DependentUpon>db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="db\dbgrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="db\dbgrand.Designer.cs">
+      <DependentUpon>dbgrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="db\dbpetit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="db\dbpetit.Designer.cs">
+      <DependentUpon>dbpetit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="db\Dashboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="db\Dashboardpetit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="logi\logihuituo.cs" />
+    <Compile Include="logi\LogitechGSDK.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="socket\BytesConverter.cs" />
+    <Compile Include="socket\Dgram.cs" />
+    <Compile Include="socket\DGramRcver.cs" />
+    <Compile Include="socket\DgramSender.cs" />
+    <EmbeddedResource Include="db\db.resx">
+      <DependentUpon>db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="db\dbgrand.resx">
+      <DependentUpon>dbgrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="db\dbpetit.resx">
+      <DependentUpon>dbpetit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\底图.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\表盘.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\选中-光圈.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\接管3号车.png" />
+    <None Include="Resources\接管2号车.png" />
+    <None Include="Resources\接管1号车.png" />
+    <None Include="Resources\监控状态.png" />
+    <None Include="Resources\监控模式.png" />
+    <None Include="Resources\1234.png" />
+    <None Include="Resources\模拟器大屏幕-基础版-四摄像头版底图.jpg" />
+    <None Include="Resources\自动驾驶.png" />
+    <None Include="Resources\羽化外框.png" />
+    <None Include="Resources\遥控驾驶.png" />
+    <None Include="Resources\模拟器大屏幕-基础版-四摄像头版底图-轿车版.jpg" />
+    <None Include="Resources\背景.png" />
+    <None Include="Resources\表盘-羽化.png" />
+    <None Include="Resources\表盘-嵌入颜色配置.png" />
+    <None Include="Resources\底层背景2.png" />
+    <None Include="Resources\底层背景1.png" />
+    <None Include="Resources\表盘1透明.png" />
+    <None Include="Resources\表盘2带背景.png" />
+    <None Include="Resources\表盘24位.png" />
+    <None Include="Resources\表盘去灰色.png" />
+    <None Include="Resources\慧拓logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\N.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\右-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\右-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\右-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\中-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\中-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\中-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\左-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\左-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r右-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r右-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r右-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r中-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r中-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r左-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r左-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r左-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r中-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\左-1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
